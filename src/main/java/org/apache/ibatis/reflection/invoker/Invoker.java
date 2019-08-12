@@ -21,7 +21,10 @@ import java.lang.reflect.InvocationTargetException;
  * @author Clinton Begin
  */
 public interface Invoker {
+  //核心是 #invoke(Object target, Object[] args) 方法，执行一次调用。而具体调用什么方法，由子类来实现。
+  //执行调用
   Object invoke(Object target, Object[] args) throws IllegalAccessException, InvocationTargetException;
 
+  //@return 类
   Class<?> getType();
 }
